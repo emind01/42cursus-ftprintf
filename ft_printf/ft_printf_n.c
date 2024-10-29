@@ -42,7 +42,7 @@ void	ft_putunbr(unsigned int num, int *len)
 
 void	ft_puthex(unsigned int num, int *len, char c)
 {
-	char	s[25];
+	char	s[8];
 	char	*base;
 	int		i;
 
@@ -68,7 +68,7 @@ void	ft_puthex(unsigned int num, int *len, char c)
 
 void	ft_putptr(size_t ptr, int *len)
 {
-	char	s[25];
+	char	s[18];
 	int		i;
 	char	*base;
 
