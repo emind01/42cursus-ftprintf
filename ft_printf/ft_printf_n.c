@@ -74,21 +74,23 @@ void	ft_putptr(size_t ptr, int *len)
 
 	base = "0123456789abcdef";
 	i = 0;
-	write(1, "0x", 2);
-	(*len) += 2;
 	if (ptr == 0)
 	{
-		ft_putchar_len('0', len);
+		ft_putstr("(nil)", len);
 		return ;
 	}
+	write(1, "0x", 2);
+	(*len) += 2;
 	while (ptr)
 	{
-		s[i] = base [ptr % 16];
+		s[i] = base[ptr % 16];
 		ptr = ptr / 16;
 		i++;
 	}
-	while (i--)
+	i--;
+	while (i >= 0)
 	{
 		ft_putchar_len(s[i], len);
+		i--;
 	}
 }
